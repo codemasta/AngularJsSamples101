@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="myApp">
+    <head>
+        <title></title>
+        <script src="Scripts/angular.min.js"> </script>
+        <script src="Scripts/jquery-1.8.2.min.js"> </script>
+        <script src="App/app.js"> </script>
+        <script src="App/Js/StudentController.js"> </script>
+        <link href="Content/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="Content/css/bootstrap-responsive.min.css" rel="stylesheet" />
+    </head>
+    <body>
+        <br />
+        <br />
+        <br />
+        <div ng-controller="StudentController">
+            <fieldset>
+                <legend>
+                    <label>Name : </label>
+                    <input type="text" ng-model="newStudent.name" />
+                    <br />
+                    <label>Sex : </label>
+                    <input type="text" ng-model="newStudent.sex" />
+                    <br />
+                    <label>Level : </label>
+                    <input type="text" ng-model="newStudent.level" />
+                    <br />
+                    <button type="submit" ng-click="Save()">Save</button>
+                </legend>
+            </fieldset>
+
+
+            <table class="table table-striped table-hover table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Sex</th>
+                        <th>Level</th>
+                    </tr>
+                </thead>
+                <tbody ng-repeat="data in students">
+                    <tr>
+                        <td>{{ data.name }} </td>
+                        <td>{{ data.sex }}</td>
+                        <td>{{ data.level }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
